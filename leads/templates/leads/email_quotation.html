@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message from Boston Services</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            color: #1a1a1a;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .header {
+            background-color: #ff6b00;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: -0.5px;
+        }
+        .content {
+            padding: 40px 30px;
+            line-height: 1.6;
+        }
+        .greeting {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .message-box {
+            background-color: #f8f9fc;
+            border-left: 4px solid #ff6b00;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            color: #4a5568;
+            white-space: pre-wrap;
+        }
+        .service-ref {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #edf2f7;
+        }
+        .footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 24px;
+            font-size: 12px;
+        }
+        .footer p {
+            margin: 5px 0;
+            color: #a0aec0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Boston Services</h1>
+        </div>
+        <div class="content">
+            <div class="greeting">Hi {{ lead.name }},</div>
+            <p>Thank you for reaching out to us regarding your service request. Please see our message below:</p>
+            
+            <div class="message-box">{{ admin_message }}</div>
+            
+            <p>If you have any questions, you can reply directly to this email or call us.</p>
+            
+            <div class="service-ref">
+                <strong>Reference:</strong> Your request for {{ lead.service.title }} on {{ lead.created_at|date:"M d, Y" }}.
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; {% now "Y" %} Boston Services. All rights reserved.</p>
+            <p>This is an automated message from our service portal.</p>
+        </div>
+    </div>
+</body>
+</html>

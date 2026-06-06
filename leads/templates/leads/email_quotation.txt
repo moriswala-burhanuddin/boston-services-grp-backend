@@ -1,0 +1,15 @@
+Hi {{ lead.name }},
+
+Thank you for reaching out to Boston Services regarding your request for {{ lead.service.title }}.
+
+Here is our response to your inquiry:
+--------------------------------------------------
+{{ admin_message }}
+--------------------------------------------------
+
+If you have any questions, you can reply directly to this email or call us.
+
+Best regards,
+Boston Services
+
+Reference: Your request for {{ lead.service.title }} on {{ lead.created_at|date:"M d, Y" }}.
