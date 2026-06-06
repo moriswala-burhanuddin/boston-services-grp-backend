@@ -172,5 +172,6 @@ EMAIL_PORT = env.int('EMAIL_PORT', default=587)
 EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='services@bostonservicesgrp.co.uk')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='fseu zdst suny uxaq')
 EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS', default=True)
+EMAIL_USE_SSL = env.bool('EMAIL_USE_SSL', default=False)
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='Boston Services GRP <services@bostonservicesgrp.co.uk>')
 ADMINS = [('Admin', env('EMAIL_HOST_USER', default='services@bostonservicesgrp.co.uk'))]
