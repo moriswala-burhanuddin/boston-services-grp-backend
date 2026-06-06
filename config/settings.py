@@ -167,10 +167,10 @@ DEFAULT_FROM_EMAIL = 'Boston Services <hello@bostonservices.com>'
 
 # Email Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'fitprojectsbymoris@gmail.com'
-EMAIL_HOST_PASSWORD = 'fseu zdst suny uxaq'
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'FitProjects By Moris <fitprojectsbymoris@gmail.com>'
-ADMINS = [('Moris', 'fitprojectsbymoris@gmail.com')]
+EMAIL_HOST = env('EMAIL_HOST', default='smtp.gmail.com')
+EMAIL_PORT = env.int('EMAIL_PORT', default=587)
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='services@bostonservicesgrp.co.uk')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='fseu zdst suny uxaq')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS', default=True)
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='Boston Services GRP <services@bostonservicesgrp.co.uk>')
+ADMINS = [('Admin', env('EMAIL_HOST_USER', default='services@bostonservicesgrp.co.uk'))]
